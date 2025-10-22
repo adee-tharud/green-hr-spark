@@ -21,56 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 
-const leaveRequests = [
-  {
-    id: "LR001",
-    employeeId: "EMP001",
-    employeeName: "John Doe",
-    department: "IT",
-    leaveType: "Sick Leave",
-    startDate: "2025-10-25",
-    endDate: "2025-10-27",
-    duration: "3 days",
-    reason: "Medical appointment and recovery",
-    status: "Pending",
-  },
-  {
-    id: "LR002",
-    employeeId: "EMP003",
-    employeeName: "Mike Johnson",
-    department: "Sales",
-    leaveType: "Vacation",
-    startDate: "2025-11-01",
-    endDate: "2025-11-05",
-    duration: "5 days",
-    reason: "Family vacation",
-    status: "Approved",
-  },
-  {
-    id: "LR003",
-    employeeId: "EMP005",
-    employeeName: "Tom Brown",
-    department: "IT",
-    leaveType: "Personal Leave",
-    startDate: "2025-10-28",
-    endDate: "2025-10-28",
-    duration: "1 day",
-    reason: "Personal matters",
-    status: "Pending",
-  },
-  {
-    id: "LR004",
-    employeeId: "EMP002",
-    employeeName: "Jane Smith",
-    department: "HR",
-    leaveType: "Sick Leave",
-    startDate: "2025-10-20",
-    endDate: "2025-10-21",
-    duration: "2 days",
-    reason: "Flu recovery",
-    status: "Rejected",
-  },
-];
+import { leaveRequests } from "@/constance/mockdata";
 
 const LeaveManagement = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -92,7 +43,7 @@ const LeaveManagement = () => {
       case "Approved":
         return "bg-primary text-white";
       case "Pending":
-        return "bg-warning text-white";
+        return "bg-yellow-300 text-white";
       case "Rejected":
         return "bg-destructive text-white";
       default:

@@ -19,14 +19,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { employees } from "@/constance/mockdata";
 
-const employees = [
-  { id: "EMP001", name: "John Doe", role: "Senior Developer", department: "IT", status: "Active", email: "john@company.com", phone: "+1234567890" },
-  { id: "EMP002", name: "Jane Smith", role: "HR Manager", department: "HR", status: "Active", email: "jane@company.com", phone: "+1234567891" },
-  { id: "EMP003", name: "Mike Johnson", role: "Sales Executive", department: "Sales", status: "On Leave", email: "mike@company.com", phone: "+1234567892" },
-  { id: "EMP004", name: "Sarah Williams", role: "Project Manager", department: "IT", status: "Active", email: "sarah@company.com", phone: "+1234567893" },
-  { id: "EMP005", name: "Tom Brown", role: "Developer", department: "IT", status: "Active", email: "tom@company.com", phone: "+1234567894" },
-];
+
 
 const Employees = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,7 +42,7 @@ const Employees = () => {
       case "Active":
         return "bg-primary text-white";
       case "On Leave":
-        return "bg-warning text-white";
+        return "bg-yellow-300 text-white";
       case "Inactive":
         return "bg-destructive text-white";
       default:

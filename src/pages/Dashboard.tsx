@@ -15,36 +15,7 @@ import {
   Line,
 } from "recharts";
 
-const employeeRoleData = [
-  { role: "Manager", count: 12 },
-  { role: "Developer", count: 45 },
-  { role: "HR", count: 8 },
-  { role: "Sales", count: 23 },
-  { role: "Support", count: 15 },
-];
-
-const departmentData = [
-  { name: "IT", value: 45, color: "#22c55e" },
-  { name: "Sales", value: 23, color: "#16a34a" },
-  { name: "HR", value: 8, color: "#15803d" },
-  { name: "Operations", value: 27, color: "#86efac" },
-];
-
-const attendanceData = [
-  { month: "Jan", attendance: 92 },
-  { month: "Feb", attendance: 88 },
-  { month: "Mar", attendance: 95 },
-  { month: "Apr", attendance: 90 },
-  { month: "May", attendance: 93 },
-  { month: "Jun", attendance: 91 },
-];
-
-const stats = [
-  { title: "Total Employees", value: "103", icon: Users, color: "bg-primary" },
-  { title: "Departments", value: "4", icon: Building2, color: "bg-success" },
-  { title: "Present Today", value: "95", icon: UserCheck, color: "bg-info" },
-  { title: "Attendance Rate", value: "92%", icon: TrendingUp, color: "bg-primary" },
-];
+import { stats, employeeRoleData, departmentData, attendanceData } from "@/constance/mockdata";
 
 const Dashboard = () => {
   return (

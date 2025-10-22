@@ -2,22 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { employeeSummary, leaveBalance } from "@/constance/mockdata";
 
-const employeeSummary = [
-  { id: "EMP001", name: "John Doe", department: "IT", role: "Senior Developer", joinDate: "2020-01-15", status: "Active" },
-  { id: "EMP002", name: "Jane Smith", department: "HR", role: "HR Manager", joinDate: "2019-03-20", status: "Active" },
-  { id: "EMP003", name: "Mike Johnson", department: "Sales", role: "Sales Executive", joinDate: "2021-06-10", status: "On Leave" },
-  { id: "EMP004", name: "Sarah Williams", department: "IT", role: "Project Manager", joinDate: "2018-09-05", status: "Active" },
-  { id: "EMP005", name: "Tom Brown", department: "IT", role: "Developer", joinDate: "2022-02-28", status: "Active" },
-];
-
-const leaveBalance = [
-  { employeeId: "EMP001", name: "John Doe", department: "IT", annualLeave: 12, sickLeave: 8, personalLeave: 4, used: 5, remaining: 19 },
-  { employeeId: "EMP002", name: "Jane Smith", department: "HR", annualLeave: 15, sickLeave: 10, personalLeave: 5, used: 8, remaining: 22 },
-  { employeeId: "EMP003", name: "Mike Johnson", department: "Sales", annualLeave: 12, sickLeave: 8, personalLeave: 4, used: 12, remaining: 12 },
-  { employeeId: "EMP004", name: "Sarah Williams", department: "IT", annualLeave: 15, sickLeave: 10, personalLeave: 5, used: 6, remaining: 24 },
-  { employeeId: "EMP005", name: "Tom Brown", department: "IT", annualLeave: 12, sickLeave: 8, personalLeave: 4, used: 3, remaining: 21 },
-];
 
 const Reports = () => {
   const getStatusColor = (status: string) => {
@@ -25,7 +11,7 @@ const Reports = () => {
       case "Active":
         return "bg-primary text-white";
       case "On Leave":
-        return "bg-warning text-white";
+        return "bg-yellow-300 text-white";
       case "Inactive":
         return "bg-destructive text-white";
       default:
