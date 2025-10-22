@@ -5,6 +5,7 @@
 **Demo URL**: https://vibecodinghrsystem.netlify.app/
 **Github URL** https://github.com/adee-tharud/green-hr-spark
 
+**Github URL**: username = hr / password = pass
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
