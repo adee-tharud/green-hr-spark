@@ -47,27 +47,27 @@ const Reports = () => {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="border rounded-lg overflow-hidden">
-            <table className="w-full">
+          <div className="border rounded-lg overflow-x-auto">
+            <table className="w-full min-w-[600px]">
               <thead className="bg-muted">
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Employee ID</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Name</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Department</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Role</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Join Date</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Status</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Employee ID</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Name</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Department</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Role</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Join Date</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Status</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y">
                 {employeeSummary.map((employee) => (
                   <tr key={employee.id} className="hover:bg-muted/50">
-                    <td className="px-4 py-3 text-sm text-foreground">{employee.id}</td>
-                    <td className="px-4 py-3 text-sm font-medium text-foreground">{employee.name}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{employee.department}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{employee.role}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{employee.joinDate}</td>
-                    <td className="px-4 py-3">
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{employee.id}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm font-medium text-foreground">{employee.name}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{employee.department}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{employee.role}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{employee.joinDate}</td>
+                    <td className="px-3 md:px-4 py-3">
                       <Badge className={getStatusColor(employee.status)}>{employee.status}</Badge>
                     </td>
                   </tr>
@@ -90,31 +90,31 @@ const Reports = () => {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="border rounded-lg overflow-hidden">
-            <table className="w-full">
+          <div className="border rounded-lg overflow-x-auto">
+            <table className="w-full min-w-[700px]">
               <thead className="bg-muted">
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Employee ID</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Name</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Department</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Annual Leave</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Sick Leave</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Personal Leave</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Used</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">Remaining</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Employee ID</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Name</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Department</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Annual Leave</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Sick Leave</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Personal Leave</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Used</th>
+                  <th className="px-3 md:px-4 py-3 text-left text-xs md:text-sm font-semibold text-foreground">Remaining</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y">
                 {leaveBalance.map((record) => (
                   <tr key={record.employeeId} className="hover:bg-muted/50">
-                    <td className="px-4 py-3 text-sm text-foreground">{record.employeeId}</td>
-                    <td className="px-4 py-3 text-sm font-medium text-foreground">{record.name}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{record.department}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{record.annualLeave}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{record.sickLeave}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{record.personalLeave}</td>
-                    <td className="px-4 py-3 text-sm text-foreground">{record.used}</td>
-                    <td className="px-4 py-3 text-sm font-semibold text-primary">{record.remaining}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{record.employeeId}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm font-medium text-foreground">{record.name}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{record.department}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{record.annualLeave}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{record.sickLeave}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{record.personalLeave}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm text-foreground">{record.used}</td>
+                    <td className="px-3 md:px-4 py-3 text-xs md:text-sm font-semibold text-primary">{record.remaining}</td>
                   </tr>
                 ))}
               </tbody>

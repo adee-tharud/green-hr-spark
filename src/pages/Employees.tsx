@@ -86,8 +86,8 @@ const Employees = () => {
             </Select>
           </div>
 
-          {/* Employee Table */}
-          <div className="border rounded-lg overflow-hidden">
+          {/* Employee Table - Desktop */}
+          <div className="hidden md:block border rounded-lg overflow-x-auto">
             <table className="w-full">
               <thead className="bg-muted">
                 <tr>
@@ -122,6 +122,35 @@ const Employees = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Employee Cards - Mobile */}
+          <div className="md:hidden space-y-3">
+            {filteredEmployees.map((employee) => (
+              <Card key={employee.id} className="p-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="font-semibold text-foreground">{employee.name}</p>
+                      <p className="text-xs text-muted-foreground">{employee.id}</p>
+                    </div>
+                    <Badge className={getStatusColor(employee.status)}>{employee.status}</Badge>
+                  </div>
+                  <div className="text-sm text-foreground">
+                    <p>{employee.role}</p>
+                    <p className="text-muted-foreground">{employee.department}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full"
+                    onClick={() => setSelectedEmployee(employee)}
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </Card>
+            ))}
           </div>
         </CardContent>
       </Card>

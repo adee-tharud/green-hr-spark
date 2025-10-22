@@ -73,14 +73,14 @@ const Dashboard = () => {
         {/* Employee Distribution by Role */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-foreground">Employee Distribution by Role</CardTitle>
+            <CardTitle className="text-sm md:text-base text-foreground">Employee Distribution by Role</CardTitle>
           </CardHeader>
           <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={250}>
               <BarChart data={employeeRoleData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="role" stroke="#000000" />
-                <YAxis stroke="#000000" />
+                <XAxis dataKey="role" stroke="#000000" fontSize={12} />
+                <YAxis stroke="#000000" fontSize={12} />
                 <Tooltip />
                 <Bar dataKey="count" fill="#22c55e" radius={[8, 8, 0, 0]} />
               </BarChart>
@@ -91,10 +91,10 @@ const Dashboard = () => {
         {/* Department-wise Employees */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-foreground">Department-wise Employees</CardTitle>
+            <CardTitle className="text-sm md:text-base text-foreground">Department-wise Employees</CardTitle>
           </CardHeader>
           <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={250}>
               <PieChart>
                 <Pie
                   data={departmentData}
@@ -102,7 +102,7 @@ const Dashboard = () => {
                   cy="50%"
                   labelLine={false}
                   label={({ name, value }) => `${name}: ${value}`}
-                  outerRadius={100}
+                  outerRadius={80}
                   fill="#8884d8"
                   dataKey="value"
                 >
@@ -120,14 +120,14 @@ const Dashboard = () => {
       {/* Attendance Trend */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-foreground">Employee Attendance Trend</CardTitle>
+          <CardTitle className="text-sm md:text-base text-foreground">Employee Attendance Trend</CardTitle>
         </CardHeader>
         <CardContent>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={250}>
             <LineChart data={attendanceData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis dataKey="month" stroke="#000000" />
-              <YAxis stroke="#000000" />
+              <XAxis dataKey="month" stroke="#000000" fontSize={12} />
+              <YAxis stroke="#000000" fontSize={12} />
               <Tooltip />
               <Line
                 type="monotone"

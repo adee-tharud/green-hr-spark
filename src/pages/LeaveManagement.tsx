@@ -180,8 +180,8 @@ const LeaveManagement = () => {
             </Select>
           </div>
 
-          {/* Leave Requests Table */}
-          <div className="border rounded-lg overflow-hidden">
+          {/* Leave Requests Table - Desktop */}
+          <div className="hidden md:block border rounded-lg overflow-x-auto">
             <table className="w-full">
               <thead className="bg-muted">
                 <tr>
@@ -223,6 +223,35 @@ const LeaveManagement = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Leave Request Cards - Mobile */}
+          <div className="md:hidden space-y-3">
+            {filteredLeaves.map((leave) => (
+              <Card key={leave.id} className="p-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="font-semibold text-foreground">{leave.employeeName}</p>
+                      <p className="text-xs text-muted-foreground">{leave.employeeId} • {leave.department}</p>
+                    </div>
+                    <Badge className={getStatusColor(leave.status)}>{leave.status}</Badge>
+                  </div>
+                  <div className="text-sm space-y-1">
+                    <p className="text-foreground font-medium">{leave.leaveType}</p>
+                    <p className="text-muted-foreground text-xs">{leave.startDate} • {leave.duration}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full"
+                    onClick={() => setSelectedLeave(leave)}
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </Card>
+            ))}
           </div>
         </CardContent>
       </Card>
